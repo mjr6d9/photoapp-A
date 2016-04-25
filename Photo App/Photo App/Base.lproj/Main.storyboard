@@ -5,40 +5,74 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--StoryBoard-->
-        <scene sceneID="8Ht-EV-ZeC">
+        <!--Item-->
+        <scene sceneID="7cm-kJ-YeS">
             <objects>
-                <collectionViewController id="CTn-h3-r7A" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="tKE-AM-aEV">
+                <collectionViewController id="n5n-Zh-KFA" customClass="CollectionViewController" customModule="Photo_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="mC5-GH-7oZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Oak-6c-IqE">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ti6-Ie-1g1">
+                            <size key="itemSize" width="100" height="100"/>
+                            <size key="headerReferenceSize" width="100" height="70"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="30" minY="30" maxX="0.0" maxY="30"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7zg-V0-8G6">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1PJ-og-aMU">
+                                <rect key="frame" x="30" y="100" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unp-xC-VCt">
+                                            <rect key="frame" x="35" y="35" width="30" height="30"/>
+                                            <state key="normal" title="Add"/>
+                                            <connections>
+                                                <action selector="AddStory:" destination="n5n-Zh-KFA" eventType="touchUpInside" id="Mvc-uD-iZZ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yfj-oO-qzv">
+                                <rect key="frame" x="147.5" y="100" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fgh-IF-deE">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cp4-WD-0j0">
+                                    <rect key="frame" x="537" y="40" width="30" height="30"/>
+                                    <state key="normal" title="Edit"/>
+                                    <connections>
+                                        <action selector="openEdit:" destination="n5n-Zh-KFA" eventType="touchUpInside" id="da2-AV-YnW"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </collectionReusableView>
                         <connections>
-                            <outlet property="dataSource" destination="CTn-h3-r7A" id="c5v-hP-pn3"/>
-                            <outlet property="delegate" destination="CTn-h3-r7A" id="l23-qe-xmB"/>
+                            <outlet property="dataSource" destination="n5n-Zh-KFA" id="TgL-ps-oCB"/>
+                            <outlet property="delegate" destination="n5n-Zh-KFA" id="iee-fW-R3X"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="StoryBoard" id="pMY-O0-Cae"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="pM6-nw-sAy"/>
+                    <connections>
+                        <outlet property="AddCell" destination="yfj-oO-qzv" id="eq6-ke-Ok0"/>
+                    </connections>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jwY-sv-RoX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iir-Ze-Chl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="112" y="-663"/>
+            <point key="canvasLocation" x="698" y="-492"/>
         </scene>
         <!--Uploads-->
         <scene sceneID="wg7-f3-ORb">
@@ -102,7 +136,7 @@
                     <connections>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="1Nu-0k-w9F" kind="relationship" relationship="viewControllers" id="ZyG-fg-KVL"/>
-                        <segue destination="CTn-h3-r7A" kind="relationship" relationship="viewControllers" id="CLu-jB-MIR"/>
+                        <segue destination="n5n-Zh-KFA" kind="relationship" relationship="viewControllers" id="77W-8e-AhJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
