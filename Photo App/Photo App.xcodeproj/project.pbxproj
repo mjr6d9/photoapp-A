@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76530FE01CC9C0EF00A89384 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76530FDF1CC9C0EF00A89384 /* CollectionViewController.swift */; };
 		C387FFAC1CB6CBF500345B98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C387FFAB1CB6CBF500345B98 /* AppDelegate.swift */; };
 		C387FFB31CB6CBF500345B98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C387FFB11CB6CBF500345B98 /* Main.storyboard */; };
 		C387FFB51CB6CBF500345B98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C387FFB41CB6CBF500345B98 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		76530FDF1CC9C0EF00A89384 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewController.swift; path = ../CollectionViewController.swift; sourceTree = "<group>"; };
 		C387FFA81CB6CBF500345B98 /* Photo App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C387FFAB1CB6CBF500345B98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C387FFB21CB6CBF500345B98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				C390879F1CC93C49008737FC /* TestPhotos */,
 				C387FFAB1CB6CBF500345B98 /* AppDelegate.swift */,
+				76530FDF1CC9C0EF00A89384 /* CollectionViewController.swift */,
 				C387FFB11CB6CBF500345B98 /* Main.storyboard */,
 				C387FFB41CB6CBF500345B98 /* Assets.xcassets */,
 				C387FFB61CB6CBF500345B98 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76530FE01CC9C0EF00A89384 /* CollectionViewController.swift in Sources */,
 				C387FFAC1CB6CBF500345B98 /* AppDelegate.swift in Sources */,
 				C390879E1CC9391A008737FC /* StoryboardCollectionViewController.swift in Sources */,
 			);
