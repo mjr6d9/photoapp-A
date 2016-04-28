@@ -100,7 +100,6 @@
                                 <connections>
                                     <outlet property="imageView" destination="gvb-Xz-yyo" id="oZO-nd-r0O"/>
                                     <outlet property="livePhotoBadgeImageView" destination="xmI-Ht-N22" id="RC2-6q-Bdk"/>
-                                    <segue destination="fvd-bf-hd7" kind="show" id="mnB-cD-Gvf"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -112,6 +111,8 @@
                     <navigationItem key="navigationItem" id="WBy-8K-uu2"/>
                     <connections>
                         <outlet property="addButton" destination="k25-qG-Tz2" id="5C0-cT-P4m"/>
+                        <segue destination="fvd-bf-hd7" kind="show" identifier="ShowAsset" id="gwn-6r-7ZD"/>
+                        <segue destination="nli-Vz-bPM" kind="show" identifier="ShowLiveAsset" id="cvQ-1c-BBr"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BIl-Bo-qaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -138,19 +139,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I1t-V9-K21">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="StA-CM-oAy" customClass="PHLivePhotoView">
-                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="StA-CM-oAy" secondAttribute="trailing" id="KVl-X6-3Ps"/>
                             <constraint firstAttribute="trailing" secondItem="I1t-V9-K21" secondAttribute="trailing" id="LUv-bD-oEV"/>
                             <constraint firstItem="I1t-V9-K21" firstAttribute="top" secondItem="WLw-zI-4eX" secondAttribute="top" id="QKs-7j-BQK"/>
-                            <constraint firstItem="4QP-ma-cUv" firstAttribute="top" secondItem="StA-CM-oAy" secondAttribute="bottom" id="W8e-2i-kvc"/>
-                            <constraint firstItem="StA-CM-oAy" firstAttribute="leading" secondItem="WLw-zI-4eX" secondAttribute="leading" id="jB2-J0-VDX"/>
-                            <constraint firstItem="StA-CM-oAy" firstAttribute="top" secondItem="sZD-4F-xef" secondAttribute="bottom" id="ldm-Bf-zKA"/>
                             <constraint firstAttribute="bottom" secondItem="I1t-V9-K21" secondAttribute="bottom" id="o3v-qc-XWl"/>
                             <constraint firstItem="I1t-V9-K21" firstAttribute="leading" secondItem="WLw-zI-4eX" secondAttribute="leading" id="yPu-lF-J6Q"/>
                         </constraints>
@@ -159,7 +152,7 @@
                     <navigationItem key="navigationItem" id="4Sl-nL-dex">
                         <nil key="title"/>
                         <progressView key="titleView" hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="Wu5-52-7Na">
-                            <rect key="frame" x="20" y="21" width="524" height="2.5"/>
+                            <rect key="frame" x="20" y="21" width="524" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </progressView>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="3Rb-AR-iXx">
@@ -171,7 +164,6 @@
                     <connections>
                         <outlet property="editButton" destination="3Rb-AR-iXx" id="vAj-wg-CtV"/>
                         <outlet property="imageView" destination="I1t-V9-K21" id="jPz-KX-SbU"/>
-                        <outlet property="livePhotoView" destination="StA-CM-oAy" id="QcR-GI-LwH"/>
                         <outlet property="playButton" destination="yVp-DC-eAd" id="8cv-Ac-9Et"/>
                         <outlet property="progressView" destination="Wu5-52-7Na" id="RWW-eY-nmS"/>
                         <outlet property="space" destination="ku7-hr-f4Q" id="iw3-Ob-5eL"/>
@@ -213,8 +205,78 @@
             </objects>
             <point key="canvasLocation" x="322.5" y="422.5"/>
         </scene>
+        <!--Live Asset View Controller-->
+        <scene sceneID="flb-Ha-hXM">
+            <objects>
+                <viewController id="nli-Vz-bPM" customClass="AAPLLiveAssetViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fnw-1U-Eh4"/>
+                        <viewControllerLayoutGuide type="bottom" id="0dR-SV-haJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KXx-UY-yfi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7yK-kp-N17">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHy-WV-LiX" customClass="PHLivePhotoView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7yK-kp-N17" firstAttribute="leading" secondItem="KXx-UY-yfi" secondAttribute="leading" id="3YD-05-aIS"/>
+                            <constraint firstAttribute="trailing" secondItem="7yK-kp-N17" secondAttribute="trailing" id="9j4-36-EzB"/>
+                            <constraint firstAttribute="trailing" secondItem="EHy-WV-LiX" secondAttribute="trailing" id="ZZP-qq-OjL"/>
+                            <constraint firstItem="EHy-WV-LiX" firstAttribute="top" secondItem="fnw-1U-Eh4" secondAttribute="bottom" id="ejG-rd-wgN"/>
+                            <constraint firstItem="0dR-SV-haJ" firstAttribute="top" secondItem="EHy-WV-LiX" secondAttribute="bottom" id="gO4-4z-eEO"/>
+                            <constraint firstAttribute="bottom" secondItem="7yK-kp-N17" secondAttribute="bottom" id="iFL-tW-VlU"/>
+                            <constraint firstItem="EHy-WV-LiX" firstAttribute="leading" secondItem="KXx-UY-yfi" secondAttribute="leading" id="jyC-x3-xaL"/>
+                            <constraint firstItem="7yK-kp-N17" firstAttribute="top" secondItem="KXx-UY-yfi" secondAttribute="top" id="szc-v0-Yue"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="k6h-1U-A5F">
+                        <nil key="title"/>
+                        <progressView key="titleView" hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="1HU-EH-WaQ">
+                            <rect key="frame" x="20" y="21" width="524" height="3"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </progressView>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="y3k-3E-06d">
+                            <connections>
+                                <action selector="handleEditButtonItem:" destination="nli-Vz-bPM" id="Zdb-SU-Qrr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editButton" destination="y3k-3E-06d" id="QZP-Fg-HPF"/>
+                        <outlet property="imageView" destination="7yK-kp-N17" id="uXP-xL-NkJ"/>
+                        <outlet property="livePhotoView" destination="EHy-WV-LiX" id="FCS-hG-zvH"/>
+                        <outlet property="playButton" destination="689-13-cIu" id="lLK-RX-iRj"/>
+                        <outlet property="progressView" destination="1HU-EH-WaQ" id="ckU-Aa-roT"/>
+                        <outlet property="space" destination="jWq-eh-1Yd" id="YrX-bx-8BB"/>
+                        <outlet property="trashButton" destination="Bto-nn-xiL" id="uLK-dT-td4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ko-vV-ibR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem style="plain" systemItem="play" id="689-13-cIu">
+                    <connections>
+                        <action selector="handlePlayButtonItem:" destination="nli-Vz-bPM" id="Zzs-Iu-2Qs"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="jWq-eh-1Yd"/>
+                <barButtonItem style="plain" systemItem="trash" id="Bto-nn-xiL">
+                    <connections>
+                        <action selector="handleTrashButtonItem:" destination="nli-Vz-bPM" id="0C0-C5-7TG"/>
+                    </connections>
+                </barButtonItem>
+            </objects>
+            <point key="canvasLocation" x="1824" y="1169"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zdI-cg-b4l"/>
+        <segue reference="sZd-hd-3lH"/>
     </inferredMetricsTieBreakers>
 </document>
