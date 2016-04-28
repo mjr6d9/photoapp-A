@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AFw-ea-UbI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AFw-ea-UbI">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--Photos-->
@@ -43,11 +43,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Photos" id="PHG-DW-u7x">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DlC-wZ-zIE">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="DlC-wZ-zIE">
                             <connections>
                                 <action selector="handleAddButtonItem:" destination="Eg3-EV-Pfg" id="LAq-iV-AWd"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="iya-If-D2D"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQO-Bv-5fk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -152,7 +153,7 @@
                     <navigationItem key="navigationItem" id="4Sl-nL-dex">
                         <nil key="title"/>
                         <progressView key="titleView" hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="Wu5-52-7Na">
-                            <rect key="frame" x="20" y="21" width="524" height="3"/>
+                            <rect key="frame" x="20" y="21" width="524" height="2.5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </progressView>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="3Rb-AR-iXx">
@@ -241,7 +242,7 @@
                     <navigationItem key="navigationItem" id="k6h-1U-A5F">
                         <nil key="title"/>
                         <progressView key="titleView" hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="1HU-EH-WaQ">
-                            <rect key="frame" x="20" y="21" width="524" height="3"/>
+                            <rect key="frame" x="20" y="21" width="524" height="2.5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </progressView>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="y3k-3E-06d">
