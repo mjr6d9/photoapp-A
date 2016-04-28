@@ -152,7 +152,7 @@
                     <navigationItem key="navigationItem" id="4Sl-nL-dex">
                         <nil key="title"/>
                         <progressView key="titleView" hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="Wu5-52-7Na">
-                            <rect key="frame" x="20" y="21" width="524" height="3"/>
+                            <rect key="frame" x="20" y="21" width="524" height="2.5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </progressView>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="3Rb-AR-iXx">
@@ -241,7 +241,7 @@
                     <navigationItem key="navigationItem" id="k6h-1U-A5F">
                         <nil key="title"/>
                         <progressView key="titleView" hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="1HU-EH-WaQ">
-                            <rect key="frame" x="20" y="21" width="524" height="3"/>
+                            <rect key="frame" x="20" y="21" width="524" height="2.5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </progressView>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="y3k-3E-06d">
