@@ -18,10 +18,11 @@ import Photos
 import PhotosUI
 
 @objc(AAPLAssetGridViewController)
-class AssetGridViewController: UICollectionViewController, PHPhotoLibraryChangeObserver {
+class AssetGridViewController: UICollectionViewController, PHPhotoLibraryChangeObserver, UIImagePickerControllerDelegate {
     
     var assetsFetchResults: PHFetchResult?
     var assetCollection: PHAssetCollection?
+    var photosAsset: PHFetchResult!
     
     @IBOutlet private weak var addButton: UIBarButtonItem!
     private var imageManager: PHCachingImageManager?
@@ -283,6 +284,13 @@ class AssetGridViewController: UICollectionViewController, PHPhotoLibraryChangeO
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
+        let picker : UIImagePickerController = UIImagePickerController()
+        picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        picker.mediaTypes = UIImagePickerController.availableMediaTypesForSourceType(.PhotoLibrary)!
+        //picker.delegate = self
+        picker.allowsEditing = false
+        self.presentViewController(picker, animated: true, completion: nil)
+        
         // Add it to the photo library
         PHPhotoLibrary.sharedPhotoLibrary().performChanges({
             let assetChangeRequest = PHAssetChangeRequest.creationRequestForAssetFromImage(image)
@@ -297,6 +305,31 @@ class AssetGridViewController: UICollectionViewController, PHPhotoLibraryChangeO
                 }
         })
     }
-    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        
+        if let image: UIImage = info["UIImagePickerControllerOriginalImage"] as? UIImage{
+            
+            //Implement if allowing user to edit the selected image
+            //let editedImage = info.objectForKey("UIImagePickerControllerEditedImage") as UIImage
+            
+            let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+            dispatch_async(dispatch_get_global_queue(priority, 0), {
+                PHPhotoLibrary.sharedPhotoLibrary().performChanges({
+                    let createAssetRequest = PHAssetChangeRequest.creationRequestForAssetFromImage(image)
+                    let assetPlaceholder = createAssetRequest.placeholderForCreatedAsset
+                    if let albumChangeRequest = PHAssetCollectionChangeRequest(forAssetCollection: self.assetCollection!, assets: self.photosAsset) {
+                        albumChangeRequest.addAssets([assetPlaceholder!])
+                    }
+                    }, completionHandler: {(success, error)in
+                        dispatch_async(dispatch_get_main_queue(), {
+                            NSLog("Adding Image to Library -> %@", (success ? "Sucess":"Error!"))
+                            picker.dismissViewControllerAnimated(true, completion: nil)
+                        })
+                })
+                
+            })
+        }
+    }
     
 }

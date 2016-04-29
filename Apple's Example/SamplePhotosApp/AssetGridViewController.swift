@@ -18,7 +18,7 @@ import Photos
 import PhotosUI
 
 @objc(AAPLAssetGridViewController)
-class AssetGridViewController: UICollectionViewController, PHPhotoLibraryChangeObserver {
+class AssetGridViewController: UICollectionViewController, PHPhotoLibraryChangeObserver, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var assetsFetchResults: PHFetchResult?
     var assetCollection: PHAssetCollection?
@@ -276,14 +276,60 @@ class AssetGridViewController: UICollectionViewController, PHPhotoLibraryChangeO
     
     @IBAction func handleAddButtonItem(_: AnyObject) {
         // Create a random dummy image.
-        let rect = rand() % 2 == 0 ? CGRectMake(0, 0, 400, 300) : CGRectMake(0, 0, 300, 400)
+        /*let rect = rand() % 2 == 0 ? CGRectMake(0, 0, 400, 300) : CGRectMake(0, 0, 300, 400)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 1.0)
         UIColor(hue: CGFloat(rand() % 100) / 100, saturation: 1.0, brightness: 1.0, alpha: 1.0).setFill()
         UIRectFillUsingBlendMode(rect, CGBlendMode.Normal)
         let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
+        UIGraphicsEndImageContext()*/
+        
+        let picker : UIImagePickerController = UIImagePickerController()
+        picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        picker.mediaTypes = UIImagePickerController.availableMediaTypesForSourceType(.PhotoLibrary)!
+        picker.delegate = self
+        picker.allowsEditing = false
+        self.presentViewController(picker, animated: true, completion: nil)
         
         // Add it to the photo library
+       /* PHPhotoLibrary.sharedPhotoLibrary().performChanges({
+            let assetChangeRequest = PHAssetChangeRequest.creationRequestForAssetFromImage(image)
+            
+            if self.assetCollection != nil {
+                let assetCollectionChangeRequest = PHAssetCollectionChangeRequest(forAssetCollection: self.assetCollection!)
+                assetCollectionChangeRequest?.addAssets([assetChangeRequest.placeholderForCreatedAsset!] as NSArray)
+            }
+            }, completionHandler: {success, error in
+                if !success {
+                    NSLog("Error creating asset: %@", error!)
+                }
+        })*/
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+         let image: UIImage = (info["UIImagePickerControllerOriginalImage"] as? UIImage)!
+            
+            //Implement if allowing user to edit the selected image
+            //let editedImage = info.objectForKey("UIImagePickerControllerEditedImage") as UIImage
+            
+            /*let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+            dispatch_async(dispatch_get_global_queue(priority, 0), {
+                PHPhotoLibrary.sharedPhotoLibrary().performChanges({
+                    let createAssetRequest = PHAssetChangeRequest.creationRequestForAssetFromImage(image)
+                    let assetPlaceholder = createAssetRequest.placeholderForCreatedAsset
+                    if let albumChangeRequest = PHAssetCollectionChangeRequest(forAssetCollection: self.assetCollection!, assets: self.assetsFetchResults!) {
+                        albumChangeRequest.addAssets([assetPlaceholder!])
+                    }
+                    }, completionHandler: {(success, error)in
+                        dispatch_async(dispatch_get_main_queue(), {
+                            NSLog("Adding Image to Library -> %@", (success ? "Sucess":"Error!"))
+                            picker.dismissViewControllerAnimated(true, completion: nil)
+                        })
+                })
+                
+            })*/
+        
+        
         PHPhotoLibrary.sharedPhotoLibrary().performChanges({
             let assetChangeRequest = PHAssetChangeRequest.creationRequestForAssetFromImage(image)
             
@@ -296,7 +342,9 @@ class AssetGridViewController: UICollectionViewController, PHPhotoLibraryChangeO
                     NSLog("Error creating asset: %@", error!)
                 }
         })
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
+
+
 }
