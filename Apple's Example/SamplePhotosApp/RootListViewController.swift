@@ -97,7 +97,7 @@ class RootListViewController: UITableViewController, PHPhotoLibraryChangeObserve
         var numberOfRows = 0
         
         if section == 0 {
-            // The "All Photos" section only ever has a single row.
+            
             numberOfRows = 1
         } else {
             let fetchResult = self.sectionFetchResults[section]
