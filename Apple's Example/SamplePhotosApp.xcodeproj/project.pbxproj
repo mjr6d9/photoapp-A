@@ -10,6 +10,7 @@
 		11A9AC6A193531AE00C5AC7F /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A9AC69193531AE00C5AC7F /* Storyboard.storyboard */; };
 		42B1025C1BB0925000553A16 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B1025B1BB0925000553A16 /* Launch Screen.storyboard */; };
 		A7CF22D71933ED8900E6E88E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CF22D61933ED8900E6E88E /* Images.xcassets */; };
+		C375FE331CD2F09F00FE5911 /* UploadListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C375FE321CD2F09F00FE5911 /* UploadListViewController.swift */; };
 		D7B1FD371BDC9071006B17C2 /* CIImage+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B1FD361BDC9071006B17C2 /* CIImage+Convenience.swift */; };
 		D7B99D4D1BDBE08B000DE794 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B99D481BDBE08B000DE794 /* AppDelegate.swift */; };
 		D7B99D4F1BDBE08C000DE794 /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B99D4A1BDBE08B000DE794 /* AssetViewController.swift */; };
@@ -27,6 +28,7 @@
 		A7CF22CC1933ED8900E6E88E /* SamplePhotosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SamplePhotosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CF22D01933ED8900E6E88E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7CF22D61933ED8900E6E88E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C375FE321CD2F09F00FE5911 /* UploadListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadListViewController.swift; sourceTree = "<group>"; };
 		D7B1FD361BDC9071006B17C2 /* CIImage+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CIImage+Convenience.swift"; sourceTree = "<group>"; };
 		D7B99D441BDBE010000DE794 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		D7B99D451BDBE010000DE794 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				D7B99D481BDBE08B000DE794 /* AppDelegate.swift */,
+				C375FE321CD2F09F00FE5911 /* UploadListViewController.swift */,
 				D7B99D4C1BDBE08B000DE794 /* RootListViewController.swift */,
 				D7B99D491BDBE08B000DE794 /* AssetGridViewController.swift */,
 				D7B99D4A1BDBE08B000DE794 /* AssetViewController.swift */,
@@ -174,6 +177,7 @@
 			files = (
 				D7F2DAB01BDCB89400560724 /* AssetGridViewController.swift in Sources */,
 				D7B99D6A1BDC740E000DE794 /* NSIndexSet+Convenience.swift in Sources */,
+				C375FE331CD2F09F00FE5911 /* UploadListViewController.swift in Sources */,
 				D7B1FD371BDC9071006B17C2 /* CIImage+Convenience.swift in Sources */,
 				D7B99D501BDBE08C000DE794 /* GridViewCell.swift in Sources */,
 				D7B99D6C1BDC751E000DE794 /* UICollectionView+Convenience.swift in Sources */,
