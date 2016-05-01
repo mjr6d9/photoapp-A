@@ -1,19 +1,23 @@
 //
-//  UploadListViewController.swift
+//  ProfileTableViewController.swift
 //  SamplePhotosApp
 //
-//  Created by Cody Cameron on 4/28/16.
+//  Created by Cody Cameron on 5/1/16.
 //
 //
 
 import UIKit
 
-class UploadListViewController: UITableViewController {
+class ProfileTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,31 +29,23 @@ class UploadListViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var numberOfRows = 1
-        
-        //This will be controlled by the number of rows in the database
-        return numberOfRows
+        // #warning Incomplete implementation, return the number of rows
+        return 0
     }
 
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
         // Configure the cell...
-        //Exampe of how the other tableview works
-        /*
-        let fetchResult = self.sectionFetchResults[indexPath.section]
-        let collection = fetchResult[indexPath.row] as! PHCollection
-        
-        cell = tableView.dequeueReusableCellWithIdentifier(CollectionCellReuseIdentifier, forIndexPath: indexPath)
-        cell.textLabel!.text = collection.localizedTitle
-        */
 
         return cell
     }
+    */
 
     /*
     // Override to support conditional editing of the table view.
