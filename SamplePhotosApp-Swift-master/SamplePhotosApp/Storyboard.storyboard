@@ -230,7 +230,6 @@
         <!--Item-->
         <scene sceneID="6J4-nC-jnC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SW6-EZ-47u" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="7dn-2j-Ia9" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aIZ-eH-wMP"/>
@@ -246,14 +245,14 @@
                                     <constraint firstAttribute="width" constant="128" id="UGB-4H-VV6"/>
                                 </constraints>
                             </imageView>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zpa-lF-Ags">
-                                <rect key="frame" x="20" y="221" width="560" height="300"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zpa-lF-Ags">
+                                <rect key="frame" x="20" y="221" width="560" height="305"/>
                                 <connections>
                                     <segue destination="ghA-CF-cPx" kind="embed" id="iIp-Ba-vV9"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBC-8w-Awf">
-                                <rect key="frame" x="244" y="104" width="77" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBC-8w-Awf">
+                                <rect key="frame" x="261.5" y="104" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -266,24 +265,36 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3k-ag-NYt">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="T8U-za-mPO">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ko4-3G-due"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="k3k-ag-NYt" secondAttribute="trailing" constant="-20" id="0J3-SR-kma"/>
                             <constraint firstItem="Zpa-lF-Ags" firstAttribute="centerX" secondItem="yXu-mb-qca" secondAttribute="centerX" id="8rA-P2-79v"/>
                             <constraint firstItem="Zpa-lF-Ags" firstAttribute="top" secondItem="PkV-HZ-u8G" secondAttribute="bottom" constant="42" id="BNC-c2-jcX"/>
                             <constraint firstItem="Zpa-lF-Ags" firstAttribute="top" secondItem="yXu-mb-qca" secondAttribute="top" constant="221" id="DN8-Q6-QBE"/>
                             <constraint firstItem="kM9-cX-tXo" firstAttribute="top" secondItem="Zpa-lF-Ags" secondAttribute="bottom" constant="25" id="IHy-3Z-yY9"/>
+                            <constraint firstItem="k3k-ag-NYt" firstAttribute="top" secondItem="yXu-mb-qca" secondAttribute="top" id="Jiu-Hk-dc8"/>
                             <constraint firstItem="LBC-8w-Awf" firstAttribute="centerY" secondItem="PkV-HZ-u8G" secondAttribute="centerY" id="NUK-Q1-711"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qCQ-HM-BjB" secondAttribute="trailing" id="Yui-iF-HUA"/>
                             <constraint firstItem="PkV-HZ-u8G" firstAttribute="top" secondItem="aIZ-eH-wMP" secondAttribute="bottom" constant="31" id="aDc-Lg-jin"/>
                             <constraint firstItem="qCQ-HM-BjB" firstAttribute="centerY" secondItem="LBC-8w-Awf" secondAttribute="centerY" id="cMX-L7-Z47"/>
                             <constraint firstItem="Zpa-lF-Ags" firstAttribute="leading" secondItem="yXu-mb-qca" secondAttribute="leadingMargin" id="phE-z8-gmS"/>
+                            <constraint firstItem="k3k-ag-NYt" firstAttribute="leading" secondItem="yXu-mb-qca" secondAttribute="leadingMargin" constant="-20" id="qUs-Pm-6a2"/>
                             <constraint firstItem="PkV-HZ-u8G" firstAttribute="leading" secondItem="Zpa-lF-Ags" secondAttribute="leading" id="rgo-pB-I2a"/>
                             <constraint firstItem="LBC-8w-Awf" firstAttribute="centerX" secondItem="yXu-mb-qca" secondAttribute="centerX" id="ygk-jW-NPV"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Aqy-LO-mRJ"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SW6-EZ-47u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-312" y="1655"/>
         </scene>
@@ -292,7 +303,7 @@
             <objects>
                 <tableViewController id="ghA-CF-cPx" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="54" sectionHeaderHeight="18" sectionFooterHeight="18" id="550-Bd-sJ9">
-                        <rect key="frame" x="0.0" y="0.0" width="560" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="560" height="305"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
