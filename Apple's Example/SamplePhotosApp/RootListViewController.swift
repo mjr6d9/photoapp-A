@@ -35,13 +35,13 @@ class RootListViewController: UITableViewController, PHPhotoLibraryChangeObserve
         allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
         let allPhotos = PHAsset.fetchAssetsWithOptions(allPhotosOptions)
         
-        let smartAlbums = PHAssetCollection.fetchAssetCollectionsWithType(.SmartAlbum, subtype: .AlbumRegular, options: nil)
+        //let smartAlbums = PHAssetCollection.fetchAssetCollectionsWithType(.SmartAlbum, subtype: .AlbumRegular, options: nil)
         
         let topLevelUserCollections = PHCollectionList.fetchTopLevelUserCollectionsWithOptions(nil)
         
         // Store the PHFetchResult objects and localized titles for each section.
-        self.sectionFetchResults = [allPhotos, smartAlbums, topLevelUserCollections]
-        self.sectionLocalizedTitles = ["", NSLocalizedString("Smart Albums", comment: ""), NSLocalizedString("Albums", comment: "")]
+        self.sectionFetchResults = [allPhotos, topLevelUserCollections]
+        self.sectionLocalizedTitles = ["", NSLocalizedString("Albums", comment: "")]
         
         PHPhotoLibrary.sharedPhotoLibrary().registerChangeObserver(self)
     }
@@ -97,7 +97,7 @@ class RootListViewController: UITableViewController, PHPhotoLibraryChangeObserve
         var numberOfRows = 0
         
         if section == 0 {
-            // The "All Photos" section only ever has a single row.
+            
             numberOfRows = 1
         } else {
             let fetchResult = self.sectionFetchResults[section]
